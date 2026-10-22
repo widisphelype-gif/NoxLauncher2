@@ -1,18 +1,17 @@
-# Nox Launcher
+# Nox Launcher — Windows-inspired Android UI
 
-Launcher Android nativo em Java, com tema escuro, relógio, gaveta de aplicativos, busca por nome, abertura de apps e opções simples de personalização.
+Launcher Android em Java com interface inspirada no Windows 11: fundo azul em gradiente, relógio/data, pesquisa, menu Iniciar, apps fixados e barra inferior centralizada.
 
-## Compilar automaticamente
-Cada push para `main` executa o workflow **Build Android APK**. Também é possível iniciá-lo manualmente em **Actions**. O APK de teste fica em **Actions → execução concluída → Artifacts → NoxLauncher-debug-apk**.
+## Gerar o APK no GitHub
+1. Envie todos os arquivos e pastas deste ZIP para a raiz do repositório GitHub.
+2. Confirme que `.github/workflows/build-apk.yml` também foi enviado.
+3. Abra **Actions** e selecione **Build Android APK**. O workflow roda automaticamente após um push para `main`; também pode ser iniciado manualmente.
+4. Baixe `NoxLauncher-debug-apk` em **Artifacts** quando a execução terminar.
 
-## Instalar
-Baixe `app-debug.apk` no artefato do workflow e abra-o no Android. Se necessário, autorize a instalação para o navegador/gerenciador de arquivos. Depois, pressione Home e escolha **Nox** como app de tela inicial.
-
-## Projeto
-- Android Gradle Plugin 8.7.3
+## Requisitos
 - Java 17
-- Min SDK 26 (Android 8.0)
-- O APK gerado é de depuração, não uma versão assinada para publicação na Play Store.
+- Android Gradle Plugin 8.7.3
+- Android SDK 35
+- Android 8.0 (API 26) ou superior
 
-## Observações
-Este é um projeto inicial funcional, não um substituto completo para launchers comerciais. Teste em seu aparelho. A escolha de papel de parede ainda abre o seletor de imagem e salva a URI; aplicar automaticamente a imagem como papel de parede do sistema pode exigir uma etapa extra.
+O app é um launcher para Android com estilo visual inspirado no Windows; não instala nem executa o Windows. Este projeto é uma base inicial e o APK de debug serve para testes. A opção de escolher imagem de fundo atualmente salva a seleção, mas ainda não aplica essa imagem como fundo.
